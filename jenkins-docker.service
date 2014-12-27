@@ -1,0 +1,11 @@
+[Unit]
+Description=Jenkins Docker container
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a jenkins_lts
+ExecStop=/usr/bin/docker stop -t 2 jenkins_lts
+
+[Install]
+WantedBy=local.target
