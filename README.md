@@ -16,6 +16,16 @@ docker run --name jenkins_lts -v /srv/containers/jenkins/data:/opt/jenkins -p 12
 ```
 (yes, that's right, jenkins available only on localhost).
 
+If you'd want you can start container during system start. Just copy systemd unit file:
+```
+copy jenkins-docker.service /etc/systemd/system/
+systemctl enable jenkins-docker.service
+```
+Then you can easily start container:
+```
+systemctl start jenkins-docker.service
+```
+
 Enjoy!
 
 Questions? Ask!
